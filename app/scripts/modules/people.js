@@ -3,9 +3,6 @@ define(['jquery'], function($) {
 		return 'Hi';
 	};
 
-	//Ajax call to test against.
-
-
 	return {
 		sayHello: sayHello 
   };
