@@ -1,0 +1,6 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+.hero-unit h1
+{
+	border-bottom: 1px solid #bababa;
+	box-shadow: 0 1px 1px white;
+}
