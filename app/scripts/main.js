@@ -3,11 +3,12 @@ require.config({
   },
 
   paths: {
-    jquery: 'vendor/jquery.min'
+    jquery: 'vendor/jquery.min',
+    people: 'modules/people'
   }
 });
  
-require(['jquery','modules/people'], function($,people) {
+require(['jquery','people'], function($,people) {
   // use app here
 	$('.hero-unit').append(people.sayHello());
   

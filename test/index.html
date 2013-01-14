@@ -23,9 +23,6 @@
   expect = chai.expect, 
   assert = chai.assert
   </script>
-      
-    
-  
 
   <!-- -->
 
@@ -43,30 +40,42 @@
       describe('sayHello()', function() {
 
       it('should say "Hi there"', function() {
-        require(['modules/people'], function(people){
+        require(['people'], function(people){
           assert(people.sayHello() === 'Hi there', 'Was expecting "Hi there".')
         });
       });
 
       it('should say "Goodbye, James"', function() {
-        require(['modules/people'], function(people){
+        require(['people'], function(people){
           assert(people.sayGoodbye('James') === 'Goodbye, James', 'Returned '+ people.sayGoodbye('James') +', but was expecting "Goodbye, James"')
         });
       });
 
       it('should add an apple to the bunch', function() {
-        require(['modules/people'], function(people){
-          assert(people.addApple('macintosh') === true, 'Returned ' + people.addApple('macintosh') + ', but was expecting true')
+        require(['people'], function(people){
+          assert(people.addApple('golden') === true, 'Returned ' + people.addApple('golden') + ', but was expecting true')
         });
       });
 
       it('should count the apples ', function() {
-        require(['modules/people'], function(people){
-          assert(people.addApple('macintosh') === true, 'Returned ' + people.addApple('macintosh') + ', but was expecting true')
+        require(['people'], function(people){
+          assert(people.countApples() === 2, 'Returned ' + people.countApples() + ', but was expecting true')
         });
       });
 
+      it('should get the apple array ', function() {
+        require(['jquery','people'], function($,people){
+          assert(Object.prototype.toString.call(people.getApples()) === "[object Array]", 'Returned ' + Object.prototype.toString.call(people.getApples()) + ', but was expecting array')
       });
+      });
+
+      it('should give the type of apple', function() {
+        require(['people'], function(people){
+          assert(people.getApples()[0] === 'golden', 'Returned ' + people.getApples()[0] + ', but was expecting "macintosh"')
+      });
+      });
+  
+    });
     });
   })();
   </script>
